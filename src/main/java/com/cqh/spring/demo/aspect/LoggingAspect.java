@@ -27,6 +27,6 @@ public class LoggingAspect {
         Object[] args = joinPoint.getArgs();
         String methodName = joinPoint.getSignature().getName();
         logger.info("====before method:方法名称为" + methodName +"参数为" + args);
-
+        
     }
 }
