@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--直接set -->
+    <bean id="zhangsan" class="com.cqh.spring.demo.entity.User">
+        <property name="name" value="zhangsan"></property>
+        <property name="id" value="1"></property>
+        <property name="age" value="18"></property>
+    </bean>
+
+    <!-- 构造函数的方式 -->
+    <bean id="lisi" class="com.cqh.spring.demo.entity.User">
+        <constructor-arg name="id" value="2"></constructor-arg>
+        <constructor-arg name="name" value="lisi"></constructor-arg>
+        <constructor-arg name="age" value="20"></constructor-arg>
+    </bean>
+    <bean id="userDao" class="com.cqh.spring.demo.dao.UserDao">
+    </bean>
+    <bean id="userService" class="com.cqh.spring.demo.service.UserService">
+        <constructor-arg name="dao"  ref="userDao"></constructor-arg>
+    </bean>
+    <bean id="userController" class="com.cqh.spring.demo.controller.UserController">
+        <constructor-arg name="userService"  ref="userService"></constructor-arg>
+    </bean>
+</beans>
