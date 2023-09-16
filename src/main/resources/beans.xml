@@ -10,7 +10,7 @@
     </bean>
 
     <!-- 构造函数的方式 -->
-    <bean id="lisi" class="com.cqh.spring.demo.entity.User" >
+    <bean id="lisi" class="com.cqh.spring.demo.entity.User">
         <constructor-arg name="id" value="2"></constructor-arg>
         <constructor-arg name="name" value="lisi"></constructor-arg>
         <constructor-arg name="age" value="20"></constructor-arg>
